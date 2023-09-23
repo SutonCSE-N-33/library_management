@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="borrowing-banner">
+    <h4 style="margin:auto;">It is already Borrowed</h4>
+    <a  href="{% url 'books' %}" class="borrow-btn">Borrow to another book</a>
+</div>
+
+{% endblock %}

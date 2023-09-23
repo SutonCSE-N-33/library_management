@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body%}
+
+<div class='review-banner'>
+    <h1>Reviw Form</h1>
+    <form method='post' class='review-form'>
+        {% csrf_token %}
+        {{form.review}} <br/><br/>
+        {{form.rating}} <br/>
+        <input class='submit-btn' type='submit' value='submit' />
+        <a class='cancel-btn' href="{% url 'cart' %}">Cancel</a>
+    </form>
+</div>
+
+{% endblock %}

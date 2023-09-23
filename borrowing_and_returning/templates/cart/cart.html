@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<section class="section-content padding-y bg">
+      <div class="container ">
+        <!-- ============================ COMPONENT 1 ================================= -->
+
+        <div class="row ">
+          <aside class="col-lg-8 m-auto">
+            <div class='d-flex justify-content-between'>
+              <h4>Wish List</h4>
+              <h4>There are {{book_items | length}} Books</h4>
+            </div>
+            <div class="card cart-banner">
+             
+              <table class="table table-borderless table-shopping-cart">
+               
+                <tbody>
+                  {% if book_items %}
+
+                  {% for item in book_items %}
+                 <tr>
+                    <td>
+                      <figure class="itemside align-items-center">
+                        <div class="aside">
+                          <img src="{{item.book.image.url}}" class="img-sm" />
+                        </div>
+                        <figcaption class="info">
+                          <a href="#" class="title text-dark"
+                            >{{item.book.title}}</a
+                          >
+                          <p class="text-muted small">
+                            
+                            Category : {{item.book.category}}
+                          </p>
+                        </figcaption>
+                      </figure>
+                    </td>
+                
+                    <td class="text-right">
+                      <a href="{% url 'submit_review' item.book.id item.id %}" class="btn btn-danger"> Returning</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+
+                  {% else %}
+
+                  <h3>{{add_book}}</h3>
+                  <a class="add_book-btn" href="{% url 'books' %}">Borrow Book</a>
+
+                  {% endif %}
+                  
+                  
+                </tbody>
+              </table>
+            </div>
+            <!-- card.// -->
+          </aside>
+          <!-- col.// -->
+          
+          <!-- col.// -->
+        </div>
+        <!-- row.// -->
+        <!-- ============================ COMPONENT 1 END .// ================================= -->
+      </div>
+      <!-- container .//  -->
+    </section>
+{% endblock%}

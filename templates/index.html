@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	{% comment %} <img src="{% static 'images/banners/1.jpg' %}" class="img-fluid rounded"> {% endcomment %}
+
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="{% static 'images/banners/slide-2.jpg' %}" class="img-fluid rounded slide-img">
+		  </div>
+		  <div class="carousel-item">
+			<img src="{% static 'images/banners/slide-3.jpg' %}" class="img-fluid rounded slide-img">
+		  </div>
+		  <div class="carousel-item">
+			<img src="{% static 'images/banners/slide-5.png' %}" class="img-fluid rounded slide-img">
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon icon-color" aria-hidden="true"></span>
+		  <span class="visually-hidden icon-color">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+		  <span class="carousel-control-next-icon icon-color" aria-hidden="true"></span>
+		  <span class="visually-hidden icon-color">Next</span>
+		</button>
+	  </div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">ALL BOOKS</h3>
+</header><!-- sect-heading -->
+
+	
+<div class="row">
+	{% for book in books %}
+
+
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{% url 'book_detail' book.category.slug book.slug   %}" class="img-wrap"> <img src="{{book.image.url}}"> </a>
+			<figcaption class="info-wrap">
+				<a href="{% url 'book_detail' book.category.slug book.slug   %}" class="title">{{book.title}}</a>
+				<div class="price-wrap mt-2">
+					<span class="price">Author: {{book.author}}</span> </br>
+					<span class="price">Publication Date: {{book.publication_date}}</span>
+				</div>
+			</figcaption>
+		</div>
+    </div>
+
+	{% endfor %}
+	
+</div> <!-- row.// -->
+<nav class="mt-4" aria-label="Page navigation sample">
+	<ul class="pagination">
+	  {% if books.has_previous %}
+	  <li class="page-item"><a class="page-link" href="?page={{books.previous_page_number}}">Previous</a></li>
+	  {% else %}
+	  <li class="page-item disabled"><a class="page-link" >Previous</a></li>
+	  {% endif%}
+
+	  {% for i in books.paginator.page_range %}
+		  <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+	  {% endfor %}
+	  
+
+	  {% if books.has_next %}
+	  <li class="page-item"><a class="page-link" href="?page={{books.next_page_number}}">Next</a></li>
+	  {% else %}
+	  <li class="page-item disabled"><a class="page-link" >Next</a></li>
+	  {% endif%}
+	</ul>
+  </nav>
+  
+
+</div><!-- container // -->
+</section>
+
+{% endblock %}

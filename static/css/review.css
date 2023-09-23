@@ -1,0 +1,86 @@
+.review-banner{
+    transform: translate(600px);
+}
+.review-banner h1{
+    margin-left: 130px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.review-form{
+    width:500px;
+    height: 250px;
+    background-color: white;
+    box-shadow: 2px 3px 4px rgb(113, 107, 107);
+    margin-bottom: 150px;
+    
+}
+.submit-btn{
+    margin-top: 12px;
+    padding: 10px 20px;
+}
+
+.slide-img{
+    width:820px;
+    margin-left: 180px;
+}
+
+.icon-color{
+    color:black;
+}
+
+.borrowing-banner{
+    transform: translate(750px,200px);
+    width:300px;
+    height: 200px;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 2px rgb(82, 80, 80);
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: 400px !important;
+}
+.borrowing-banner a{
+    margin-top: 85px;
+    display: block;
+}
+.borrow-btn{
+    background-color: blue;
+    border-radius: .5rem;
+    color:white;
+    padding: 5px 5px;
+    margin-top: 10px;
+}
+.borrow-btn:hover{
+    color:red;
+}
+.cart-banner{
+   margin-bottom: 900px !important;
+}
+
+footer-banner{
+    height: 150px !important;
+    background-color: black;
+    margin-top: 30px;
+}
+
+.add_book-btn{
+    text-align: center;
+    border:1px solid black;
+    padding:10px 5px;
+    width:150px;
+    height: 40px;
+    margin-top: 50px;
+    margin-left: 600px;
+}
+.cancel-btn{
+    text-align: center;
+    border:1px solid black;
+    padding:10px 5px;
+    width:150px;
+    height: 30px;
+    margin-left: 40px;
+    border-radius: .5rem;
+    background-color: black;
+    color: white;
+}
+
