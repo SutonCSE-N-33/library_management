@@ -11,13 +11,13 @@
 
 	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-inner">
-		  <div class="carousel-item active">
+		  <div class="carousel-item banner active">
 			<img src="{% static 'images/banners/slide-2.jpg' %}" class="img-fluid rounded slide-img">
 		  </div>
-		  <div class="carousel-item">
+		  <div class="carousel-item banner">
 			<img src="{% static 'images/banners/slide-3.jpg' %}" class="img-fluid rounded slide-img">
 		  </div>
-		  <div class="carousel-item">
+		  <div class="carousel-item banner">
 			<img src="{% static 'images/banners/slide-5.png' %}" class="img-fluid rounded slide-img">
 		  </div>
 		</div>
@@ -52,7 +52,7 @@
 	<div class="col-md-3">
 		<div class="card card-product-grid">
 			<a href="{% url 'book_detail' book.category.slug book.slug   %}" class="img-wrap"> <img src="{{book.image.url}}"> </a>
-			<figcaption class="info-wrap">
+			<figcaption class="info-wrap text-center">
 				<a href="{% url 'book_detail' book.category.slug book.slug   %}" class="title">{{book.title}}</a>
 				<div class="price-wrap mt-2">
 					<span class="price">Author: {{book.author}}</span> </br>

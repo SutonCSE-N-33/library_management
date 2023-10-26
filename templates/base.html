@@ -29,7 +29,6 @@
 <link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'css/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
 <link href="{% static 'css/review.css' %}" rel="stylesheet" type="text/css"  />
-
 <link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -38,6 +37,50 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'js/jquery-3.3.1.min.js' %}" type="text/javascript"></script>
 
+<style>
+  @media screen and (max-width: 800px) {
+    .logo-title{
+      font-size: 15px;
+  }
+  .library-btn{
+    margin-left:160px;
+    margin-top: -20px;
+  }
+  .authenticate-box{
+    margin-left: 30px;
+  }
+  .password-field{
+   display:flex;
+  }
+  .footer-banner{
+    text-align: center;
+  }
+  {% comment %} //library-page {% endcomment %}
+  .book-card{
+    text-align: center;   
+  }
+  {% comment %} review-form {% endcomment %}
+  .review-banner{
+    transform: translate(35px,0px);
+  }
+  .cancel-btn{
+    margin-left:340px;
+  }
+  .banner{
+    width:360px;
+    transform: translateX(-100px)
+  }
+  }
+
+
+  .r-password-field{
+    margin-left:20px;
+  }
+  .cancel-btn{
+    margin-left:340px;
+  }
+  
+</style>
   </head>
 <body>
   {% comment %} {{request.user.first_name}} {% endcomment %}
@@ -64,14 +107,14 @@
           <div style="background-color: #e3f2fd;border-radius:.5rem" class="row p-3  align-items-center">
             <div class="col-lg-4 col-md-3 col-6">
               <a href="{% url 'home' %}" class="brand-wrap">
-                <h3>Library Management System</h3>
+                <h3 class="logo-title">Library Management System</h3>
               </a>
               <!-- brand-wrap.// -->
             </div>
            
 
             <!-- col.// -->
-            <a href="{% url 'books' %}" class="btn btn-outline-primary">Library</a>
+            <a href="{% url 'books' %}" class="btn btn-outline-primary library-btn">Library</a>
             <div class="col-lg col-md-6 col-sm-12 col">
               <form method='post' action="{% url 'books_by_filter' %}" class="search">
                  {% csrf_token %} 
@@ -94,7 +137,7 @@
               <!-- search-wrap .end// -->
             </div>
             <!-- col.// -->
-            <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+            <div class="col-lg-3 col-sm-6 authenticate-box col-8 order-2 order-lg-3">
               <div class="d-flex justify-content-end mb-3 mb-lg-0">
                 <div class="widget-header">
                    {%if request.user.is_authenticated %}
@@ -143,7 +186,7 @@
 				<p class="text-muted">developed by Nazrul</p>
 			</div>
 			<div class="col-md-8 text-md-center">
-				<span  class="px-2">nazrulislamsuton06@gmail.com</span>
+				<span  class="px-2 footer-email">nazrulislamsuton06@gmail.com</span>
 				<span  class="px-2">+001816249784</span>
 				<span  class="px-2">Chittagong,Bangladesh</span>
 			</div>
