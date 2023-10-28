@@ -1,0 +1,6 @@
+asgiref
+crispy-tailwind
+Django
+django-crispy-forms
+Pillow
+sqlparse
